@@ -147,3 +147,8 @@ const fetchUserData = {
 };
 
 console.log(fetchUserData?.job?.title);
+
+//----------++++----------
+//---++Nullish Coalescing++---
+const userInput = null;
+const storedData = userInput ?? "Default"; //Only uses Default if userInput is null or undefined but it will use userInput if it is just empty string

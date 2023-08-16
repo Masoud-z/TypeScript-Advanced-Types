@@ -74,4 +74,6 @@ const fetchUserData = {
     job: { title: "CEO", description: "My own company" },
 };
 console.log((_a = fetchUserData === null || fetchUserData === void 0 ? void 0 : fetchUserData.job) === null || _a === void 0 ? void 0 : _a.title);
+const userInput = null;
+const storedData = userInput !== null && userInput !== void 0 ? userInput : "Default";
 //# sourceMappingURL=app.js.map
