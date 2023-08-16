@@ -29,6 +29,7 @@ function add(a: Combinable, b: Combinable) {
   return a + b;
 }
 
+//----------++++----------
 //TypeScript type guard
 type UnknownEmployee = Employee | Admin;
 function printEmployeeInfo(emp: UnknownEmployee) {
@@ -43,6 +44,7 @@ function printEmployeeInfo(emp: UnknownEmployee) {
 
 printEmployeeInfo(e1);
 
+//----------++++----------
 // ---++ Type Guards with class ++---
 class Car {
   derive() {
@@ -75,6 +77,7 @@ function useVehicle(vehicle: Vehicle) {
 useVehicle(v1);
 useVehicle(v2);
 
+//----------++++----------
 //---++Discriminated Unions++---
 interface Bird {
   type: "bird";
@@ -102,14 +105,28 @@ function moveAnimal(animal: Animal) {
 
 moveAnimal({ type: "bird", flyingSpeed: 10 });
 
+//----------++++----------
 //---++Type Casting++---
 // const userInputElement = <HTMLInputElement>(document.getElementById("user-input"));
 const userInputElement = document.getElementById(
   "user-input"
 ) as HTMLInputElement; //This one is useful for React that <HTMLInputElement> is interpret as a component
 
-if (userInputElement) {
+const unsafeUserInputElement = document.getElementById("user-input");
+
+userInputElement.value = "Hi there!";
+
+if (unsafeUserInputElement) {
   (userInputElement as HTMLInputElement).value = "Hi there!";
 }
 
-userInputElement.value = "Hi there!";
+//----------++++----------
+//---++Index Properties++---
+interface ErrorContainer {
+  [prop: string]: string;
+} //With this you can add as many values as you want but all of them should be string
+
+const errorBag: ErrorContainer = {
+  email: "Not a valid email",
+  username: "Must start with a capital character!",
+};
