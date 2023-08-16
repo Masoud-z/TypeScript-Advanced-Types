@@ -101,3 +101,15 @@ function moveAnimal(animal: Animal) {
 }
 
 moveAnimal({ type: "bird", flyingSpeed: 10 });
+
+//---++Type Casting++---
+// const userInputElement = <HTMLInputElement>(document.getElementById("user-input"));
+const userInputElement = document.getElementById(
+  "user-input"
+) as HTMLInputElement; //This one is useful for React that <HTMLInputElement> is interpret as a component
+
+if (userInputElement) {
+  (userInputElement as HTMLInputElement).value = "Hi there!";
+}
+
+userInputElement.value = "Hi there!";
