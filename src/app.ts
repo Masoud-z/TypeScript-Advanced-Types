@@ -136,3 +136,14 @@ const errorBag: ErrorContainer = {
   email: "Not a valid email",
   username: "Must start with a capital character!",
 };
+
+//----------++++----------
+//---++Optional Chaining++---
+
+const fetchUserData = {
+  id: "u1",
+  name: "Masoud",
+  job: { title: "CEO", description: "My own company" },
+};
+
+console.log(fetchUserData?.job?.title);
